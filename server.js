@@ -7,6 +7,7 @@ const app = express();
 
 app.use(express.json());
 
+const PORT = process.env.PORT || 3000;
 const BOT_TOKEN = process.env.BOT_TOKEN;
 
 app.get("/", (req, res) => {
@@ -41,6 +42,6 @@ app.post("/webhook", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server running on port 3000");
 });
