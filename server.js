@@ -9,6 +9,10 @@ app.use(express.json());
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
 
+app.get("/", (req, res) => {
+  res.send("Bot server is running");
+});
+
 app.post("/webhook", async (req, res) => {
   try {
     const message = req.body.message;
